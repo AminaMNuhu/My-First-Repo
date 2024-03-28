@@ -8,6 +8,8 @@ let bg;
 let y = 0;
 
 
+
+
 let graphicMap = [
 //   0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], // 0
@@ -21,6 +23,9 @@ let graphicMap = [
     [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], // 8
     [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]  // 9
 ]
+
+
+
 
 
 let tileRules = [
@@ -257,6 +262,8 @@ class Player {
          this.playerRight = this.xPos + this.tileSize - 1 - this.collisionXPadding;
          this.playerTop = this.yPos + this.collisionYPadding;
          this.playerBottom = this.yPos + this.tileSize - 1;
+
+        
        
         //corner coordinate objects
          this.topLeft = {
@@ -285,7 +292,9 @@ class Player {
             this.isJumping = false;
             this.isFalling = true;
         }
+        
     }
+    
 
 
     setYDirection() {
@@ -337,7 +346,10 @@ class Player {
         if(!keyIsDown("65") && !keyIsDown("68")) { //no key
             this.dirX = 0; //stop
         }
+        
     }
+
+    
 
 
     CreateCollisions(velX, velY) {
@@ -457,6 +469,11 @@ class Tile {
     }
 
 
+
+
+
+
+    
     debug() {
         //TILE
         stroke(245);
@@ -464,11 +481,20 @@ class Tile {
         rect(this.xPos, this.yPos, this.tileSize, this.tileSize);
 
 
+
+
+
+
+        
+
         //LABEL
         noStroke();
         fill(255);
         textAlign(LEFT, TOP);
        
         text(this.tileID, this.xPos, this.yPos);
-    } // I've hidden the DEBUG method but this is where the code for it goes!
+    } 
+
+
+    
 }
